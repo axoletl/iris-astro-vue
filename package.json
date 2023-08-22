@@ -1,0 +1,27 @@
+{
+  "name": "swipesafe-microsite",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "astro build",
+    "astro": "astro",
+    "dev": "astro dev --host",
+    "lint": "eslint --ext .js,.vue src --fix",
+    "lint-nofix": "eslint --ext .js,.vue src",
+    "preview": "astro preview",
+    "start": "astro dev"
+  },
+  "dependencies": {
+    "@astrojs/vue": "^2.2.1",
+    "astro": "^2.10.9",
+    "vue": "^3.3.4"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-eslint": "^5.0.8",
+    "@vue/eslint-config-standard": "^8.0.1",
+    "autoprefixer": "^10.4.15",
+    "eslint": "^8.47.0",
+    "eslint-plugin-vue": "^9.17.0",
+    "sass": "^1.66.0"
+  },
+  "type": "module"
+}

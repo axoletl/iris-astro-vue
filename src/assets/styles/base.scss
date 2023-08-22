@@ -1,0 +1,106 @@
+html {
+  font-size: 16px;
+  letter-spacing: normal;
+  word-spacing: normal;
+  line-height: 1.2;
+  font-family: sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body,
+main {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+main {
+  width: 100%;
+}
+
+::selection {
+  background-color: #000;
+  color: #fff;
+}
+
+div,
+section,
+nav,
+header,
+footer {
+  box-sizing: border-box;
+}
+
+figure,
+img,
+video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+label,
+a,
+button,
+input,
+textarea {
+  font-size: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  line-height: inherit;
+  margin: 0;
+  color: inherit;
+}
+
+a {
+  text-decoration: none;
+
+  @include hover {
+    color: inherit;
+  }
+}
+
+input,
+textarea {
+  padding: 0;
+  border: none;
+  outline: 1px solid transparent;
+
+  &::placeholder {
+    color: rgb(128, 128, 128);
+    opacity: 0.5;
+  }
+}
+
+textarea {
+  resize: none;
+}
+
+button {
+  appearance: none;
+  width: fit-content;
+  height: fit-content;
+  max-width: none;
+  min-width: none;
+  max-height: none;
+  min-height: none;
+  color: inherit;
+  background: none;
+  padding: 0;
+  border: none;
+  outline: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: left;
+
+  @include hover {
+    color: inherit;
+  }
+}

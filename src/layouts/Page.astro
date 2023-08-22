@@ -1,0 +1,49 @@
+---
+import "@/assets/styles/base.scss";
+
+import pageMeta from "@/assets/data/meta.js";
+
+const title = pageMeta.title;
+const description = pageMeta.description;
+const canonicalURL = new URL(pageMeta.url);
+const image = new URL("./social.png", pageMeta.url);
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+
+    <!-- Primary Meta Tags -->
+    <title>{title || pageMeta.title}</title>
+    <meta name="title" content={title || pageMeta.title} />
+    <meta name="description" content={description || pageMeta.description} />
+    <link rel="icon" href="favicon.ico" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={image} />
+
+    <!-- Google Fonts -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" /> -->
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> -->
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
