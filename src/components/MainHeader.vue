@@ -3,7 +3,7 @@
     <h1>{{ meta.title }}</h1>
     <a :href="base">Home</a>
     <a :href="`${base}about`">About</a>
-    <a :href="`${base}not-found`">Invalid Page (WIP)</a>
+    <a :href="`${base}not-found`">Invalid Page</a>
     <p>→</p>
     <a :href="`${base}404`">404</a>
   </header>

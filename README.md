@@ -16,3 +16,5 @@
 
 ## To lint
 `npm run lint`
+
+## [Demo here](https://axoletl.github.io/iris-astro-vue/)

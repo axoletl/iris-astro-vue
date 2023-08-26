@@ -4,7 +4,14 @@
       "component": "SegmentTemplate",
       "load": false,
       "data": {
-        "body": "<h2 style='font-weight: bold'>Segment</h2><p>Vue component based blocks rendered from JSON data</p>"
+        "body": "<h2 style='font-weight: bold'>Segment based content</h2><p>Vue component based blocks rendered from JSON data</p>"
+      }
+    },
+    {
+      "component": "SegmentTemplate",
+      "load": false,
+      "data": {
+        "body": "<h2 style='font-weight: bold'>Filesystem routing</h2><p>Routes created from Astro frontmatter</p>"
       }
     },
     {
