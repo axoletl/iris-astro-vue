@@ -15,7 +15,7 @@ export default {
   data () {
     return {
       meta,
-      base: import.meta.env.BASE_URL
+      base: import.meta.env.BASE_URL,
     }
   },
 }
@@ -23,8 +23,9 @@ export default {
 <style lang="scss">
 .header {
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
-  padding: 2rem;
+  padding: 2rem 2rem 1rem;
 
   h1 {
     background-color: #000;
@@ -32,15 +33,18 @@ export default {
     padding: 0.25rem;
     font-weight: $bold;
     margin-right: auto;
+    margin-bottom: 1rem;
   }
 
   a {
     margin-left: 2rem;
+    margin-bottom: 1rem;
   }
 
   p {
     margin-left: 1rem;
     margin-right: -1rem;
+    margin-bottom: 1rem;
   }
 }
 </style>

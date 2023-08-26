@@ -2,48 +2,42 @@
   // run anyway if animation functions dont resolve within 10 seconds
 
   &--text {
-    animation: var(--temp-anim-name, animate-in-text) $dur-longer calc(var(--anim-delay, 10000ms) + $dur-short) $ease-in-out-cubic 1 both;
+    animation: var(--temp-anim-name, animate-in-text) $dur-long calc(var(--anim-delay, 10000ms) + $dur-shorter) $ease-in-out-cubic 1 both;
     animation-play-state: var(--anim-state, running);
 
     @keyframes animate-in-text {
       0% {
-        transform: translateY(1rem);
+        transform: translateY(0.5rem);
         opacity: 0;
-      }
-
-      80% {
-        opacity: 1;
       }
 
       100% {
         transform: translateY(0);
+        opacity: 1;
       }
     }
   }
 
   &--block {
-    animation: var(--temp-anim-name, animate-in-block) $dur-longer calc(var(--anim-delay, 10000ms) + $dur-short) $ease-in-out-cubic 1 both;
+    animation: var(--temp-anim-name, animate-in-block) $dur-long calc(var(--anim-delay, 10000ms) + $dur-shorter) $ease-in-out-cubic 1 both;
     animation-play-state: var(--anim-state, running);
 
     @keyframes animate-in-block {
       0% {
-        transform: translateY(1rem);
+        transform: translateY(0.5rem);
         opacity: 0;
-      }
-
-      80% {
-        opacity: 1;
       }
 
       100% {
         transform: translateY(0);
+        opacity: 1;
       }
     }
   }
 
   &--inner-block {
     .animate-in__inner {
-      animation: var(--temp-anim-name, animate-in-block) $dur-longer calc(var(--anim-delay, 10000ms) + $dur-short + var(--anim-block-delay, 0ms)) $ease-in-out-cubic 1 both;
+      animation: var(--temp-anim-name, animate-in-block) $dur-long calc(var(--anim-delay, 10000ms) + $dur-shorter + var(--anim-block-delay, 0ms)) $ease-in-out-cubic 1 both;
       animation-play-state: var(--anim-state, running);
     }
   }
