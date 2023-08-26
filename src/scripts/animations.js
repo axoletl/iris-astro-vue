@@ -65,7 +65,7 @@ function stop () {
 }
 
 export function updateNodes () {
-  nodes = Array.from(document.getElementsByClassName('animate-in'))
+  nodes = Array.from(document.getElementsByClassName('animate-in')).reverse()
   for (let i = 0; i < nodes.length; i++) {
     const node = nodes[i]
     node.style.setProperty('--anim-state', 'paused')
@@ -102,6 +102,8 @@ function checkIntersection () {
       node.style.setProperty('--anim-delay', '0ms')
       nodes.splice(i, 1)
       nodePositions.splice(i, 1)
+      // comment this out to have transition nodes not wait for previous nodes
+      break
     }
   }
 }

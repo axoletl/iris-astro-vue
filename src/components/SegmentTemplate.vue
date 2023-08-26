@@ -1,5 +1,5 @@
 <template>
-  <div class="test" v-html="data.body"></div>
+  <div class="test animate-in animate-in--block" v-html="data.body"></div>
 </template>
 <script>
 export default {
@@ -14,5 +14,7 @@ export default {
 <style lang="scss">
 .test {
   padding: 0 2rem;
+  max-width: 40rem;
+  margin-bottom: 1rem;
 }
 </style>

@@ -6,6 +6,13 @@
       "data": {
         "body": "<h2 style='font-weight: bold'>Segment</h2><p>Vue component based blocks rendered from JSON data</p>"
       }
+    },
+    {
+      "component": "SegmentTemplate",
+      "load": false,
+      "data": {
+        "body": "<h2 style='font-weight: bold'>Basic intersection animations</h2><p>Plain unhydrated HTML allows safer usage of a generic JS animation system</p>"
+      }
     }
   ]
 }
