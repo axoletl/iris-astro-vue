@@ -5,6 +5,8 @@ import vue from "@astrojs/vue";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://axoletl.github.io",
+  base: "/iris-astro-vue/",
   compressHTML: true,
   integrations: [vue()],
   vite: {
