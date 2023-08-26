@@ -11,22 +11,12 @@ let headerDelayTimeout = null
 
 export function init () {
   barba.init({
-    requestError: (trigger, action, url, response) => {
-      if (action === 'click' && response.status && response.status === 404) {
-        barba.go('/404')
-      }
-      return false
-    },
     transitions: [
       {
         name: 'page',
         leave () {
           const done = this.async()
-          window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: 'smooth',
-          })
+          window.scrollTo({ top: 0, left: 0, behavior: 'smooth', })
           doPageAnimation('page-leave', done)
         },
         after () {
@@ -110,6 +100,10 @@ function checkIntersection () {
 
 function doPageAnimation (animation, callback) {
   const viewElement = document.getElementById('_view')
+  if (!viewElement) {
+    callback()
+    return
+  }
   viewElement.classList.add(animation)
   addEventListener(viewElement, 'animationend', (e, closeListener) => {
     if (e.animationName !== animation) return
