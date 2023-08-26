@@ -4,7 +4,7 @@
       "component": "SegmentTemplate",
       "load": false,
       "data": {
-        "body": "<h2 style='font-weight: bold'>Segment</h2><p>Block component based data format</p>"
+        "body": "<h2 style='font-weight: bold'>Segment</h2><p>Vue component based blocks rendered from JSON data</p>"
       }
     }
   ]

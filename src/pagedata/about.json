@@ -5,7 +5,7 @@
       "component": "SegmentTemplate",
       "load": false,
       "data": {
-        "body": "<h2 style='font-weight: bold'>About</h2><p>Routing demonstration, handled smoothly and with SPA-like prefetching and partial mount by Barba.js</p><p>This only really works because Astro islands scripts get retriggered on DOM insertion</p>"
+        "body": "<h2 style='font-weight: bold'>About</h2><p>Routing demonstration with no server configuration, handled smoothly and with SPA-like prefetching and partial mount by Barba.js</p><p>This only really works because Astro islands scripts get retriggered on DOM insertion, and (seem to) leave little to no global state.</p>"
       }
     }
   ]
