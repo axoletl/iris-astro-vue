@@ -1,19 +1,21 @@
 <template>
   <header class="header">
     <h1>{{ meta.title }}</h1>
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/not-found">Invalid Page (WIP)</a>
+    <a :href="base">Home</a>
+    <a :href="`${base}about`">About</a>
+    <a :href="`${base}not-found`">Invalid Page (WIP)</a>
     <p>→</p>
-    <a href="/404">404</a>
+    <a :href="`${base}404`">404</a>
   </header>
 </template>
 <script>
 import meta from '@/data/meta.json'
+
 export default {
   data () {
     return {
       meta,
+      base: import.meta.env.BASE_URL
     }
   },
 }
