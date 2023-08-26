@@ -1,0 +1,35 @@
+---
+import Page from "@/layouts/Page.astro";
+import SegmentContainer from "@/components/SegmentContainer.vue";
+
+export async function getStaticPaths() {
+  const pages = await Astro.glob("@/pagedata/*.json");
+  return pages.map((page) => {
+    return {
+      params: { page: page.slug },
+      props: { pageData: page },
+    };
+  });
+}
+
+const { pageData } = Astro.props;
+---
+
+<Page pageData={pageData}>
+  {
+    pageData.content.map((block, i) => {
+      switch (block.load) {
+        case "load":
+          return <SegmentContainer data={block} index={i} client:load />;
+        case "idle":
+          return <SegmentContainer data={block} index={i} client:idle />;
+        case "visible":
+          return <SegmentContainer data={block} index={i} client:visible />;
+        case "only":
+          return <SegmentContainer data={block} index={i} client:only="vue" />;
+        default:
+          return <SegmentContainer data={block} index={i} />;
+      }
+    })
+  }
+</Page>

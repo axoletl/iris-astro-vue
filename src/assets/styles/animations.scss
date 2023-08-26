@@ -1,0 +1,115 @@
+.animate-in {
+  // run anyway if animation functions dont resolve within 10 seconds
+
+  &--text {
+    animation: var(--temp-anim-name, animate-in-text) $dur-longer calc(var(--anim-delay, 10000ms) + $dur-short) $ease-in-out-cubic 1 both;
+    animation-play-state: var(--anim-state, running);
+
+    @keyframes animate-in-text {
+      0% {
+        transform: translateY(1rem);
+        opacity: 0;
+      }
+
+      80% {
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  &--block {
+    animation: var(--temp-anim-name, animate-in-block) $dur-longer calc(var(--anim-delay, 10000ms) + $dur-short) $ease-in-out-cubic 1 both;
+    animation-play-state: var(--anim-state, running);
+
+    @keyframes animate-in-block {
+      0% {
+        transform: translateY(1rem);
+        opacity: 0;
+      }
+
+      80% {
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  &--inner-block {
+    .animate-in__inner {
+      animation: var(--temp-anim-name, animate-in-block) $dur-longer calc(var(--anim-delay, 10000ms) + $dur-short + var(--anim-block-delay, 0ms)) $ease-in-out-cubic 1 both;
+      animation-play-state: var(--anim-state, running);
+    }
+  }
+}
+
+// PAGE TRANSITIONS
+// class names need to be the same as animation names due to js check
+
+.page-leave {
+  animation: page-leave 0ms $dur-long;
+
+  @keyframes page-leave {
+    from {
+      opacity: 1;
+    }
+  }
+
+  .header {
+    animation: page-leave-header $dur-standard $ease-in-out-cubic 1 forwards;
+
+    @keyframes page-leave-header {
+      to {
+        opacity: 0;
+        transform: translateY(-100%);
+      }
+    }
+  }
+
+  >.main {
+    animation: page-leave-main $dur-long $ease-in-out-cubic 1 forwards;
+
+    @keyframes page-leave-main {
+      to {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.page-enter {
+  animation: page-enter 0ms $dur-long;
+
+  @keyframes page-enter {
+    from {
+      opacity: 1;
+    }
+  }
+
+  >.header {
+    animation: page-leave-header $dur-standard $ease-in-out-cubic 1 backwards;
+
+    @keyframes page-leave-header {
+      from {
+        opacity: 0;
+      }
+    }
+  }
+
+
+  >.main {
+    animation: page-enter-main $dur-standard $ease-in-out-cubic 1 backwards;
+
+    @keyframes page-enter-main {
+      from {
+        opacity: 0;
+      }
+    }
+  }
+}

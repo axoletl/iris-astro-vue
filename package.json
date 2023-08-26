@@ -1,17 +1,16 @@
 {
-  "name": "swipesafe-microsite",
+  "name": "iris-astro-vue",
   "version": "0.0.1",
   "scripts": {
-    "build": "astro build",
     "astro": "astro",
     "dev": "astro dev --host",
+    "build": "astro build",
     "lint": "eslint --ext .js,.vue src --fix",
-    "lint-nofix": "eslint --ext .js,.vue src",
-    "preview": "astro preview",
-    "start": "astro dev"
+    "lint-nofix": "eslint --ext .js,.vue src"
   },
   "dependencies": {
     "@astrojs/vue": "^2.2.1",
+    "@barba/core": "^2.9.7",
     "astro": "^2.10.9",
     "vue": "^3.3.4"
   },

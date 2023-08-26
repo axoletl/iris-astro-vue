@@ -1,0 +1,12 @@
+{
+  "slug": "404",
+  "content": [
+    {
+      "component": "SegmentTemplate",
+      "load": false,
+      "data": {
+        "body": "<h2 style='font-weight: bold'>404</h2><p>Dynamic 404 page</p><br><p><em>WIP: routing seems to get interupted or conflict, meaning 404 isn't accessible via invalid page routing.</em></p><p><em>Navigating directly to an invalid page still seems to serve a 404 based on server configurations</em></p>"
+      }
+    }
+  ]
+}

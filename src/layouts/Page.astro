@@ -1,15 +1,21 @@
 ---
 import "@/assets/styles/base.scss";
+import "@/assets/styles/animations.scss";
 
-import pageMeta from "@/assets/data/meta.js";
+import MainHeader from "@/components/MainHeader.vue";
+import MainFooter from "@/components/MainFooter.vue";
+
+import pageMeta from "@/data/meta.json";
 
 const title = pageMeta.title;
 const description = pageMeta.description;
 const canonicalURL = new URL(pageMeta.url);
 const image = new URL("./social.png", pageMeta.url);
+
+// const { pageData } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -23,7 +29,7 @@ const image = new URL("./social.png", pageMeta.url);
     <title>{title || pageMeta.title}</title>
     <meta name="title" content={title || pageMeta.title} />
     <meta name="description" content={description || pageMeta.description} />
-    <link rel="icon" href="favicon.ico" />
+    <link rel="icon" href="favicon.svg" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -43,7 +49,21 @@ const image = new URL("./social.png", pageMeta.url);
     <!-- <link rel="preconnect" href="https://fonts.googleapis.com" /> -->
     <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> -->
   </head>
-  <body>
-    <slot />
+
+  <body data-barba="wrapper">
+    <MainHeader />
+    <div id="_view" data-barba="container">
+      <main class="main">
+        <slot />
+      </main>
+    </div>
+    <MainFooter />
   </body>
+
+  <script>
+    import * as Animations from "@/scripts/animations";
+    import { ready } from "@/scripts/helpers";
+
+    ready(Animations.init);
+  </script>
 </html>

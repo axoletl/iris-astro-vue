@@ -1,0 +1,11 @@
+{
+  "content": [
+    {
+      "component": "SegmentTemplate",
+      "load": false,
+      "data": {
+        "body": "<h2 style='font-weight: bold'>Segment</h2><p>Block component based data format</p>"
+      }
+    }
+  ]
+}

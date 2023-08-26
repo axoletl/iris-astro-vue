@@ -5,19 +5,24 @@ html {
   line-height: 1.2;
   font-family: sans-serif;
   -webkit-tap-highlight-color: transparent;
+  height: 100%;
 }
 
 html,
 body,
-main {
+main,
+#_view {
   padding: 0;
   margin: 0;
   width: 100%;
-  height: 100%;
 }
 
-main {
-  width: 100%;
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 100%;
 }
 
 ::selection {
@@ -35,7 +40,8 @@ footer {
 
 figure,
 img,
-video {
+video,
+picture {
   display: block;
   width: 100%;
   height: auto;
@@ -52,6 +58,7 @@ button,
 input,
 textarea {
   font-size: inherit;
+  font-weight: inherit;
   letter-spacing: inherit;
   word-spacing: inherit;
   line-height: inherit;
@@ -60,8 +67,6 @@ textarea {
 }
 
 a {
-  text-decoration: none;
-
   @include hover {
     color: inherit;
   }
