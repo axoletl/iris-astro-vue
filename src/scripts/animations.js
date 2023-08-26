@@ -2,7 +2,7 @@ import barba from '@barba/core'
 import { addEventListener } from './helpers'
 
 const INTERVAL = 100
-const HEADER_MIN_IN_TIME = 500
+const ANIMATION_START_DELAY = 200
 let nodes = []
 let nodePositions = []
 let prevWindowWidth = 0
@@ -57,7 +57,7 @@ function reset () {
     intersectionInterval = setInterval(checkIntersection, INTERVAL)
     window.removeEventListener('resize', onResize)
     window.addEventListener('resize', onResize)
-  }, HEADER_MIN_IN_TIME)
+  }, ANIMATION_START_DELAY)
 }
 
 function stop () {
